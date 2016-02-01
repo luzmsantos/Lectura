@@ -19,9 +19,8 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Image Grid.Row="0" Source="Images\Logo.png" HorizontalAlignment="Left" Stretch="Fill" Width="46" Margin="10,5,0,33" />
-        <TextBlock Grid.Row="0" Margin="0,0,4,33" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="{StaticResource MediumGreyBrush}" FontFamily="Segoe UI" FontSize="18"><Run Text="Body Basics"/></TextBlock>
-        <Image Grid.Row="0" Source="Images\Status.png" Stretch="None" HorizontalAlignment="Center" Margin="6,24,616,487" Grid.RowSpan="2" />
+        <Image Grid.Row="0" Source="Images\Logo.png" HorizontalAlignment="Left" Stretch="Fill" Width="46" Margin="5,5,0,33" />
+        <TextBlock Grid.Row="0" Margin="0,0,617,9" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="{StaticResource MediumGreyBrush}" FontFamily="Segoe UI" FontSize="10"><Run Text="Body Basics"/></TextBlock>
 
         <Viewbox Grid.Row="1" HorizontalAlignment="Center">
             <Image Source="{Binding ImageSource}" Stretch="UniformToFill" />
@@ -30,7 +29,7 @@
         <StatusBar Grid.Row="2" HorizontalAlignment="Stretch" x:Name="statusBar" VerticalAlignment="Bottom" Background="White" Foreground="{StaticResource MediumGreyBrush}">
             <StatusBarItem Content="{Binding StatusText}" />
         </StatusBar>
-        <Label Content="" x:Name="label" HorizontalAlignment="Left" Margin="297,5,0,0" VerticalAlignment="Top" Height="26" Width="164" RenderTransformOrigin="0.5,0.5">
+        <Label Content="" x:Name="label" HorizontalAlignment="Left" Margin="404,5,0,0" VerticalAlignment="Top" Height="26" Width="164" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -40,12 +39,12 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label Content="" x:Name="label2" HorizontalAlignment="Left" Margin="138,31,0,0" VerticalAlignment="Top" Width="334"/>
-        <Label Content="Idlectura:" x:Name="label3" HorizontalAlignment="Left" Margin="72,30,0,0" Height="26" VerticalAlignment="Top"/>
-        <Button Content="Pausa" x:Name="boton1" HorizontalAlignment="Left" Margin="472,11,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click" Height="37"/>
-        <Button x:Name="btnsalir" Content="Salir" HorizontalAlignment="Left" Margin="587,27,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <Label Content="Ref.:" HorizontalAlignment="Left" Margin="72,6,0,0" VerticalAlignment="Top"/>
-        <TextBox Text="" Name="Nomb" HorizontalAlignment="Left" Height="24" Margin="104,7,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="163" TextChanged="Ref_TextChanged"/>
+        <Label Content="" x:Name="label2" HorizontalAlignment="Left" Margin="119,31,0,0" VerticalAlignment="Top" Width="334"/>
+        <Label Content="Idlectura:" x:Name="label3" HorizontalAlignment="Left" Margin="53,30,0,0" Height="26" VerticalAlignment="Top"/>
+        <Button Content="Star / Pause" x:Name="boton1" HorizontalAlignment="Left" Margin="585,3,0,0" VerticalAlignment="Top" Width="82" Click="Button_Click" Height="27" Background="#FF0966EC" FontWeight="Bold"/>
+        <Button x:Name="btnsalir" Content="Exit" HorizontalAlignment="Left" Margin="587,35,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" Background="#FFF10F0F" FontWeight="Bold"/>
+        <Label Content="Ref.:" HorizontalAlignment="Left" Margin="52,6,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="" Name="Nomb" HorizontalAlignment="Left" Height="24" Margin="84,7,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="163" TextChanged="Ref_TextChanged"/>
 
 
     </Grid>
