@@ -29,7 +29,7 @@
         <StatusBar Grid.Row="2" HorizontalAlignment="Stretch" x:Name="statusBar" VerticalAlignment="Bottom" Background="White" Foreground="{StaticResource MediumGreyBrush}">
             <StatusBarItem Content="{Binding StatusText}" />
         </StatusBar>
-        <Label Content="" x:Name="label" HorizontalAlignment="Left" Margin="404,5,0,0" VerticalAlignment="Top" Height="26" Width="164" RenderTransformOrigin="0.5,0.5">
+        <Label Content="" x:Name="label" FontSize="12" HorizontalAlignment="Left" Margin="479,26,0,0" VerticalAlignment="Top" Height="26" Width="92" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -39,12 +39,17 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label Content="" x:Name="label2" HorizontalAlignment="Left" Margin="119,31,0,0" VerticalAlignment="Top" Width="334"/>
-        <Label Content="Idlectura:" x:Name="label3" HorizontalAlignment="Left" Margin="53,30,0,0" Height="26" VerticalAlignment="Top"/>
+        <Label Content="" x:Name="label2"  FontWeight="Bold" HorizontalAlignment="Left" Margin="119,31,0,0" VerticalAlignment="Top" Width="334"/>
+        <Label Content="Idlectura:" FontWeight="Bold" x:Name="label3" HorizontalAlignment="Left" Margin="53,30,0,0" Height="26" VerticalAlignment="Top"/>
         <Button Content="Star / Pause" x:Name="boton1" HorizontalAlignment="Left" Margin="585,3,0,0" VerticalAlignment="Top" Width="82" Click="Button_Click" Height="27" Background="#FF0966EC" FontWeight="Bold"/>
         <Button x:Name="btnsalir" Content="Exit" HorizontalAlignment="Left" Margin="587,35,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" Background="#FFF10F0F" FontWeight="Bold"/>
-        <Label Content="Ref.:" HorizontalAlignment="Left" Margin="52,6,0,0" VerticalAlignment="Top"/>
-        <TextBox Text="" Name="Nomb" HorizontalAlignment="Left" Height="24" Margin="84,7,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="163" TextChanged="Ref_TextChanged"/>
+        <Label Content="Nombre:" FontWeight="Bold" HorizontalAlignment="Left" Margin="52,6,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="" Name="Nomb" FontSize="12" HorizontalAlignment="Left" Height="24" Margin="113,7,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="160" TextChanged="Ref_TextChanged"/>
+        <ComboBox Name="Gestos" HorizontalAlignment="Left" Margin="292,8,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content ="Brazo arriba" Background="Yellow" FontFamily="Verdana" FontSize="12" FontWeight="Bold"/>
+            <ComboBoxItem Content ="Brazos abiertos" Background="PaleTurquoise" FontFamily="Verdana" FontSize="12" FontWeight="Bold"/>
+            <ComboBoxItem Content ="Brazos arriba" Background="Orchid" FontFamily="Verdana" FontSize="12" FontWeight="Bold"/>
+        </ComboBox>
 
 
     </Grid>

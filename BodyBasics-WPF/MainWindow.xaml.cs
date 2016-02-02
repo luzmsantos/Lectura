@@ -135,6 +135,7 @@ namespace Microsoft.Samples.Kinect.BodyBasics
        /// 
        private int counter = 0;
        private string nombre; // para describir o tener una referencia de la lectura.
+       private string gesto;
        private string idlectura;
        private bool sesion = true;
 
@@ -173,7 +174,8 @@ namespace Microsoft.Samples.Kinect.BodyBasics
         public MainWindow()
         {
             idlectura = System.Guid.NewGuid().ToString().Replace("-", "").ToUpper();
-          
+            // ComboBox menu
+            this.InitializeComponent();
 
             // one sensor is currently supported
             this.kinectSensor = KinectSensor.GetDefault();
@@ -350,7 +352,7 @@ namespace Microsoft.Samples.Kinect.BodyBasics
      
         private void Reader_FrameArrived(object sender, BodyFrameArrivedEventArgs e)
         {
-            if (counter % 30 == 0)
+            if (counter % 15 == 0)
             {
                  
                 bool dataReceived = false;
@@ -479,7 +481,7 @@ namespace Microsoft.Samples.Kinect.BodyBasics
                            // nombre = Nomb.Text;
                                                       
                             label.Content = nombre;
-                            BASED.insertar(idlectura, nombre ,headx, heady, headz, neckx, necky, neckz, hipleftx, hiplefty, hipleftz, footleftx, footlefty, footleftz, handleftx, handlefty, handleftz,
+                            BASED.insertar(idlectura, nombre, gesto ,headx, heady, headz, neckx, necky, neckz, hipleftx, hiplefty, hipleftz, footleftx, footlefty, footleftz, handleftx, handlefty, handleftz,
                             hiprightx, hiprighty, hiprightz, kneeleftx, kneelefty, kneeleftz, spinemidx, spinemidy, spinemidz, ankleleftx, anklelefty, ankleleftz, elbowleftx, elbowlefty,
                             elbowleftz, footrightx, footrighty, footrightz, handrightx, handrighty, handrightz, kneerightx, kneerighty, kneerightz, spinebasex, spinebasey, spinebasez,
                             thumbleftx, thumblefty, thumbleftz, wristleftx, wristlefty, wristleftz, anklerightx, anklerighty, anklerightz, elbowrightx, elbowrighty, elbowrightz, thumbrightx,
@@ -528,14 +530,16 @@ namespace Microsoft.Samples.Kinect.BodyBasics
           // Boton Pausa/  clave unica.
         public void Button_Click(object sender, RoutedEventArgs e)
         {
-                    
+                     
 
             if (sesion == true) //re  true
             {
                 nombre = Nomb.Text;
+                gesto = Gestos.Text;
+                //gesto = Gesto.Text;
                 idlectura = System.Guid.NewGuid().ToString().Replace("-", "").ToUpper();
                 sesion = false;
-                Nomb.Clear();
+              
             }
 
             else 
@@ -594,6 +598,8 @@ namespace Microsoft.Samples.Kinect.BodyBasics
                     drawingContext.DrawEllipse(drawBrush, null, jointPoints[jointType], JointThickness, JointThickness);
                 }
             }
+            //Nomb.Clear(); 
+
         }
 
         /// <summary>
@@ -709,6 +715,18 @@ namespace Microsoft.Samples.Kinect.BodyBasics
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
+        }
+
+        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            //ProbandoDataContext PruebaDc = new ProbandoDataContext();
+            //var Resultados = from Persona in PruebaDc.Agendas select Persona.Nombre;
+            //Combo_cb.ItemsSource = Resultados;
         }
 
       
