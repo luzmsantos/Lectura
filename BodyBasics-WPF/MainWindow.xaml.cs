@@ -352,7 +352,7 @@ namespace Microsoft.Samples.Kinect.BodyBasics
      
         private void Reader_FrameArrived(object sender, BodyFrameArrivedEventArgs e)
         {
-            if (counter % 15 == 0)
+            if (counter % 5 == 0)
             {
                  
                 bool dataReceived = false;
